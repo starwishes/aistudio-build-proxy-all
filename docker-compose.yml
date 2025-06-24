@@ -1,9 +1,8 @@
 services:
   camoufox:
     build: .
-    environment:
-      # 设置一个你最终Gemini服务的API密钥
-      - ENV_VARIABLE: ${ENV_VARIABLE}
+    env_file:
+      - ./.env
     volumes:
       - ./camoufox-py/config.yaml:/app/config.yaml
       - ./camoufox-py/cookies:/app/cookies
